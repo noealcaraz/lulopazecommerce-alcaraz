@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1, 
+        "name": "Maceta Luz",
+        "description": "dsofnsdfndsnsdfdnfvdfbvdjfkffcskldnvkjdfvlkssñsadfvoihdfjsfddlgjgñlsdmvnvbldsfvsd",
+        "price": 5220,
+        "stock": 5,
+        "category": "Pintadas"
+    },
+    {
+        "id": 2, 
+        "name": "Maceta Sol",
+        "description": "dsofnsdfndsnsdfdnfvdfbvdjfkffcskldnvkjdfvlkssñsadfvoihdfjsfddlgjgñlsdmvnvbldsfvsd",
+        "price": 5220,
+        "stock": 8,
+        "category": "Pintadas"
+    },
+    {
+        "id": 3, 
+        "name": "Maceta Tierra",
+        "description": "dsofnsdfndsnsdfdnfvdfbvdjfkffcskldnvkjdfvlkssñsadfvoihdfjsfddlgjgñlsdmvnvbldsfvsd",
+        "price": 7220,
+        "stock": 9,
+        "category": "Barnizadas"
+    },
+    {
+        "id": 4, 
+        "name": "Maceta Fuego",
+        "description": "dsofnsdfndsnsdfdnfvdfbvdjfkffcskldnvkjdfvlkssñsadfvoihdfjsfddlgjgñlsdmvnvbldsfvsd",
+        "price": 7220,
+        "stock": 18,
+        "category": "Barnizadas"
+    },
+    {
+        "id": 5, 
+        "name": "Maceta Paz",
+        "description": "dsofnsdfndsnsdfdnfvdfbvdjfkffcskldnvkjdfvlkssñsadfvoihdfjsfddlgjgñlsdmvnvbldsfvsd",
+        "price": 5220,
+        "stock": 4,
+        "category": "Pintadas"
+    },
+    {
+        "id": 6, 
+        "name": "Maceta Star",
+        "description": "dsofnsdfndsnsdfdnfvdfbvdjfkffcskldnvkjdfvlkssñsadfvoihdfjsfddlgjgñlsdmvnvbldsfvsd",
+        "price": 7220,
+        "stock": 7,
+        "category": "Barnizadas"
+    }
+]

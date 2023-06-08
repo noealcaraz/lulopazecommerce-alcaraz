@@ -1,0 +1,84 @@
+.jejox {
+  padding: 20px;
+}
+
+:root, #root{
+  background-color: #fffb70;
+}
+.navbar-main {
+  
+  .navbar-brand{
+      padding: 10px;
+      background: rgb(179,191,170);
+      color: white;
+      font-size: 24px;
+  }
+  
+  .container{
+      margin: 0;
+      padding: 0;
+  }
+  
+  .navbar-brand{
+      color: white;
+  }
+}
+
+.nav{
+
+  .nav-item{
+  color: white;
+  }
+}
+
+.logo{
+
+  margin-right: 10px;
+}
+
+
+.logo img{
+      max-width: 35px;
+  }
+
+.number{
+  color: black;
+  user-select: none;
+  margin: -5px 1px 0px 1px;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.item-list{
+  color: rgb(247, 247, 247);
+  font-size: 18px;
+  margin: 10px 0px 0px 12px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-card {
+  /* Estilos personalizados para la tarjeta */
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.custom-card .card-title {
+  color: #333;
+}
+
+.custom-card .btn {
+  margin-top: 10px;
+}
+
