@@ -1,7 +1,6 @@
 import React from 'react'
-import productos from "../data.json"
+import productos from "../../data.json"
 import ItemList from './ItemList';
-
 
 const ItemListContainer = () => {
   const getDatos = () => {

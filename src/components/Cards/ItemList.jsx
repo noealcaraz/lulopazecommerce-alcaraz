@@ -1,4 +1,4 @@
-import Item from "./Item";
+import Item from "../Cards/Item";
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 

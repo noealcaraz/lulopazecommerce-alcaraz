@@ -68,7 +68,7 @@
 }
 
 .custom-card {
-  /* Estilos personalizados para la tarjeta */
+
   background-color: #f2f2f2;
   border: 1px solid #ccc;
   padding: 10px;
@@ -81,4 +81,5 @@
 .custom-card .btn {
   margin-top: 10px;
 }
+
 

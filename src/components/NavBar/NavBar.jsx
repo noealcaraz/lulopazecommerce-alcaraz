@@ -7,14 +7,14 @@ import CartWidget from './CartWidget';
 const NavBar = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#">Macetas LULOPAZ</Navbar.Brand>
+      <Navbar bg="secondary" variant="dark" expand="lg">
+        <Navbar.Brand href="/">Macetas LULOPAZ</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#">Inicio</Nav.Link>
-            <Nav.Link href="#">Acerca de</Nav.Link>
-            <Nav.Link href="#">Contacto</Nav.Link>
+            <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link href="./about">Barnizadas</Nav.Link>
+            <Nav.Link href="./contact">Pintadas a Mano</Nav.Link>
           </Nav>
           <CartWidget />
         </Navbar.Collapse>

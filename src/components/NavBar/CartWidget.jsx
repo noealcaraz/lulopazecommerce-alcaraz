@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const CartWidget = () => {
   return (
       <div className="logo d-flex">
