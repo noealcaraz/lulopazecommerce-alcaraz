@@ -1,26 +1,46 @@
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Nav, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import CartWidget from './CartWidget';
+import CartWidget from '../../pages/Carrito/CartWidget';
+import CartOverlay from '../../pages/Carrito/CartOverlay';
+import { CartContext } from '../../context/ShoppingCartContext';
 
-const NavBar = () => {
+function NavbarHeader() {
+  const { isCartOpen } = useContext(CartContext);
+
   return (
-    <>
-      <Navbar bg="secondary" variant="dark" expand="lg">
-        <Navbar.Brand href="/">Macetas LULOPAZ</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Inicio</Nav.Link>
-            <Nav.Link href="./about">Barnizadas</Nav.Link>
-            <Nav.Link href="./contact">Pintadas a Mano</Nav.Link>
-          </Nav>
-          <CartWidget />
-        </Navbar.Collapse>
-      </Navbar>
-    </>
+    <header style={{ position: 'sticky', top: 0, width: '100%', zIndex: 999, backgroundColor: 'white' }}>
+      <a href="/" className='logito'>
+        <img src="/src/assets/lulopaz.png" alt="logo" />
+      </a>
+      <Nav className='barranavega'>
+        <Nav.Item className='estilolink'>
+          <Nav.Link href="/" variant='dark'>
+            INICIO
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href='/contacto' title="/contacto">
+            CONTACTO
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href='/shop' title="/shop">
+            SHOP
+          </Nav.Link>
+        </Nav.Item>
+        <NavDropdown title="PRODUCTOS" id="nav-dropdown">
+          <NavDropdown.Item href="/product-category/cemento"> Macetas de cemento </NavDropdown.Item>
+          <NavDropdown.Item href="/product-category/madera pintada"> Macetas de madera pintadas </NavDropdown.Item>
+          <NavDropdown.Item href="/product-category/porcelana"> Macetas de porcelana </NavDropdown.Item>
+        </NavDropdown>
+        <CartWidget />
+      </Nav>
+      {isCartOpen && <CartOverlay />}
+    </header>
   );
-};
+}
 
-export default NavBar;
+export default NavbarHeader;
+

@@ -1,0 +1,23 @@
+.formulario {
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+	background-color: white;
+}
+
+.formuinput {
+    width: 40px;
+    
+}
+
+.FormControl {
+    width: 40px;
+
+}
+
+.containerform {
+    text-align: center;
+    padding-top: 20px;
+}

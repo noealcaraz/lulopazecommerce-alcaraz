@@ -1,0 +1,13 @@
+.card-containerproduct {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+	margin: 25px;
+    gap: 25px;
+}
+
+.cargando {
+	display: flex;
+	justify-content: center;
+	margin: 40px;
+}

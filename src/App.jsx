@@ -1,30 +1,42 @@
-import React from 'react'
 import './App.css'
-import NavBar from './components/NavBar/NavBar'
-import AboutPage from './components/pages/About'
-import ContactPage from './components/pages/Contacto'
-import ItemListContainer from './components/Cards/ItemListContainer'
-import ItemDetailContainer from './components/Cards/ItemDetailContainer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
+
+//React router dom
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+//Pages
+import InicioPage from './pages/Inicio/InicioPage'
+import ContactPage from './pages/Contacto/ContactPage'
+import ShopPage from './pages/Shop/ShopPage';
+import ProductDetailPage from './pages/ProductDetail/ProductDetailPage';
+import ProductCategoryPage from './pages/ProductCategory/ProductCategoryPage';
+
+//COMPONENTS
+import NavbarHeader from './components/NavBar/NavBar'
+import CartOverlay from './pages/Carrito/CartOverlay';
+
+//CONTEXT
+import ShoppingCartContextProvider from './context/ShoppingCartContext';
+
 
 
 const App = () => {
   return (
-    <div className='jejox'>
+    <div >
       <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
-      </Routes>
+        <ShoppingCartContextProvider>
+          <NavbarHeader/>
+            <Routes>
+              <Route path="/" element={<InicioPage />} />
+              <Route path="/contacto" element={<ContactPage />} />
+              <Route path="/shop" element={<ShopPage />} />
+              <Route path="/product-detail/:id" element={<ProductDetailPage />} />
+              <Route path="/product-category/:category" element={<ProductCategoryPage />} />
+              <Route path="/carrito" element={<CartOverlay />} />
+            </Routes>
+        </ShoppingCartContextProvider>
       </BrowserRouter>
     </div>
   )
-
 }
 
-export default App
+export default App;
