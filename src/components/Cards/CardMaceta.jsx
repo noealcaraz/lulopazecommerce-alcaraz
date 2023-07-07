@@ -4,6 +4,7 @@ import "./CardMaceta.css";
 
 
 const CardMaceta = ({ img, name, price, description, showBuyButton, handleBuyButtonClick, addToCart }) => {
+    
     return (
         <div className="card-container">
             <Card className="custom-card" style={{ width: '18rem' }}>
@@ -28,3 +29,5 @@ const CardMaceta = ({ img, name, price, description, showBuyButton, handleBuyBut
 };
 
 export default CardMaceta;
+
+

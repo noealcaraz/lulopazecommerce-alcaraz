@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/ShoppingCartContext';
 import bagImage from '../../assets/bag.png';
-import CartProduct from '../../components/Cards/CartProduct';
+import CardMaceta from '../../components/Cards/CardMaceta';
 
 const CartWidget = () => {
   const { cart, isCartOpen, setIsCartOpen } = useContext(CartContext);
@@ -27,7 +27,7 @@ const CartWidget = () => {
             {cart.length === 0 ? (
               <p>El carrito está vacío.</p>
             ) : (
-             cart.map(cart => <CartProduct key={cart.id} {...cart} />)
+             cart.map(cart => <CardMaceta key={cart.id} {...cart} />)
             )}
           </div>
         </div>

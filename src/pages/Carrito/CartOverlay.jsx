@@ -1,20 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 import { CartContext } from '../../context/ShoppingCartContext';
 import './CartOverlay.css'
-import { useLocation } from 'react-router-dom';
 import CartProduct from '../../components/Cards/CartProduct';
 
 
 const CartOverlay = () => {
-  const { cart, setCart } = useContext(CartContext);
-  const { state } = useLocation();
-
-  useEffect(() => {
-    if (state && state.cartItem) {
-      setCart((prevCart) => [...prevCart, state.cartItem]);
-    }
-  }, [state, setCart]);
-
+  const { cart } = useContext(CartContext);
   return (
     <div className="cart-overlay">
       <h2 className="cart-overlay-title">Carrito de compras</h2>  
@@ -30,9 +21,11 @@ const CartOverlay = () => {
           />
         ))
       )}
+      
     </div>
     
   );
 };
 
 export default CartOverlay;
+

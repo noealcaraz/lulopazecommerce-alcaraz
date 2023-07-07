@@ -13,50 +13,40 @@ import { db } from "../../firebase/firebaseConfig"
 
 
 const ProductDetailPage = () => {
-    const [producto, setMaceta] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [producto, setMaceta] = useState([]); // *producto* almacena un valor y lo actualiza con *setMaceta*, se inicializa el estado *producto* con un array vacío. 
+    const [isLoading, setIsLoading] = useState(true); 
     const [showBuyButton, setShowBuyButton] = useState(true);
 
-    const { id } = useParams();
-    const { cart, setCart } = useContext(CartContext);
-    const navigate = useNavigate();
+    const { id } = useParams(); // id desestructura el objeto q es devuelto por useParams para obtener solo la prop ID (React Router)
+    const { addItemToCart } = useContext(CartContext); // CartContext accede a la funcion addItemToCart a través de useContext
+    const navigate = useNavigate(); // useNavitage utiliza a navigate para acceder a /carrito (React Router)
 
     useEffect(() => {
         const getMaceta = async () => {
-            const q = query(collection(db, "macetas"), where(documentId(), "==", id));
-            const docs = [];
-            const queryMacetas = await getDocs(q);
-            queryMacetas.forEach((doc) => {
-                docs.push({ ...doc.data(), id: doc.id });
+            const q = query(collection(db, "macetas"), where(documentId(), "==", id)); // se crea una consulta 'q' utilizando la f() 'query' de Firebase, se consulta en 'macetas' y con 'where' filtro los documentos donde el id del doc sea igual al valor de la variable id
+            const docs = []; //acá se almacenan los datos q obtengo de la consulta q hice arriba
+            const queryMacetas = await getDocs(q); //'getDocs' f() de Firebase, se usa para obtener los docs q cumplen con la consulta 'q' - await espera q se complete la operacion asincronica y se resuelva la promise
+            queryMacetas.forEach((doc) => { //se recorre c/documento obtenido de 'queryMacetas'. 
+                docs.push({ ...doc.data(), id: doc.id }); //por c/documento se extrae la info utilizando 'doc.data()' y se agrega al array 'docs' utilizando 'push'. además se agrega una propiedad adicional 'id' al obj para almacenar el id del documento
             });
-            setMaceta(docs);
+            setMaceta(docs); //'setMaceta' actualiza el estado de producto con el valor de 'docs'
         };
-        getMaceta();
-        setTimeout(() => {
+        getMaceta(); //actualiza el estado del componente, consulta a Firebase, obtiene documentos de "macetas", los procesa, y almacena en productos del componente utilizando 'setMaceta'
+        setTimeout(() => { 
             setIsLoading(false);
         }, 300);
     }, [id]);
 
     const addToCart = (maceta) => {
-        
         const newItem = {
           id: maceta.id,
           img: maceta.img,
           name: maceta.name,
           price: maceta.price,
           quantity: 1,
-          // ...otros datos del producto que deseas agregar al carrito
         };
-
-        const isItemInCart = cart.some((item) => item.id === newItem.id);
-        if (!isItemInCart) {      
-            setCart((prevCart) => [...prevCart, newItem]);
-            alert('Producto añadido al carrito con éxito');
-            navigate('/carrito', { state: { cartItem: newItem } });
-            console.log(newItem)
-        } else {
-            alert ('El producto ya existe en el carrito')
-        }
+        addItemToCart(newItem);
+        navigate('/carrito');
     };
 
     const handleBuyButtonClick = () => {
@@ -79,7 +69,7 @@ const ProductDetailPage = () => {
                             description={maceta.description}
                             showBuyButton={showBuyButton}
                             handleBuyButtonClick={handleBuyButtonClick}
-                            addToCart={addToCart}
+                            addToCart={() => addToCart(maceta)}
                         />
                     ))
                 )}

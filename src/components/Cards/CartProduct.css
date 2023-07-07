@@ -1,0 +1,27 @@
+.cart-product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .cart-product-img {
+    width: 150px; 
+    height: auto;
+    margin-right: 10px;
+  }
+  
+
+  .cart-product-name {
+    margin: 30px;
+  }
+  
+  .cart-product-price {
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .bloquecard {
+    display: flex;
+    justify-content: center;
+  }

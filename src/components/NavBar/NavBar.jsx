@@ -25,11 +25,6 @@ function NavbarHeader() {
             CONTACTO
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href='/shop' title="/shop">
-            SHOP
-          </Nav.Link>
-        </Nav.Item>
         <NavDropdown title="PRODUCTOS" id="nav-dropdown">
           <NavDropdown.Item href="/product-category/cemento"> Macetas de cemento </NavDropdown.Item>
           <NavDropdown.Item href="/product-category/madera pintada"> Macetas de madera pintadas </NavDropdown.Item>
