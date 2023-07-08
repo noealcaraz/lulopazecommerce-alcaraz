@@ -20,8 +20,8 @@ const initialState = {
 
 const FormControlDisabledExample = () => {
   const [values, setValues] = useState(initialState);
-
-  const [purchaseID, setPurchaseID] = useState("")
+  const [purchaseID, setPurchaseID] = useState("");
+  const [isFormComplete, setIsFormComplete] = useState(false);
    
   const handleOnChange = (e) => {
     const { value, name } = e.target;
@@ -42,10 +42,21 @@ const FormControlDisabledExample = () => {
     setValues(initialState);
   }
 
+  const checkFormCompletion = () => {
+    const { name, email, phone } = values;
+    if (name && email && phone) {
+      setIsFormComplete(true);
+    } else {
+      setIsFormComplete(false);
+    }
+  };
+
+  const isFormComplet = values.name && values.email && values.phone;
+
 
   return (
     <div className='containerform'>
-      <h1>Realiza tu compra y te enviaremos un código de seguimiento del producto</h1>
+      <h1>Completa tus datos para comprar</h1>
         <form className='formulario' onSubmit={onSubmit}>
           <Form.Control  style={{ width: '400px' }}
             type="text"
@@ -71,7 +82,7 @@ const FormControlDisabledExample = () => {
             onChange={handleOnChange}
           />
           <br />
-          <Button variant="success" type="submit">Comprar</Button>
+          <Button variant="success" type="submit" onClick={checkFormCompletion} disabled={!isFormComplet}>Comprar</Button>
         </form>
         {purchaseID && <Message purchaseID={purchaseID}/>}
     </div>

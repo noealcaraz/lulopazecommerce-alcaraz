@@ -25,3 +25,8 @@
     display: flex;
     justify-content: center;
   }
+
+  .totalapagar{
+    margin: 5px;
+    font-weight: bold;
+  }

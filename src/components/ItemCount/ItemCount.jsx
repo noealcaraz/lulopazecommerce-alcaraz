@@ -1,48 +1,45 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
-const ItemCount = ({ stock }) => {
-    const [producto, setMacetas] = useState(1);
-    const [productoStock, setMacetaStock] = useState(stock);
+const ItemCount = ({ stock, onQuantityChange }) => {
+  const [cantidad, setCantidad] = useState(1);
 
-    const incrementarStock = () => {
-        if (producto < productoStock) {
-            setMacetas(producto + 1);
-        }
+  const incrementarCantidad = () => {
+    if (cantidad < stock) {
+      setCantidad(cantidad + 1);
+      onQuantityChange(cantidad + 1); // Llamada a la función onQuantityChange con la nueva cantidad
     }
+  };
 
-    const decrementarStock = () => {
-        if (producto > 1) {
-            setMacetas(producto - 1);
-        }
+  const decrementarCantidad = () => {
+    if (cantidad > 1) {
+      setCantidad(cantidad - 1);
+      onQuantityChange(cantidad - 1); // Llamada a la función onQuantityChange con la nueva cantidad
     }
-    
+  };
 
-    useEffect(() => {
-        setMacetaStock(stock);
-    }, [stock]);
+  useEffect(() => {
+    setCantidad(1);
+  }, []);
 
-    console.log(producto)
-
-    return (
-        <div className="container">
-            <div className="row">
-                <div className="col">
-                    <div className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" className="btn btn-light" onClick={decrementarStock}>-</button>
-                        <button type="button" className="btn btn-light">{stock}</button>
-                        <button type="button" className="btn btn-light" onClick={incrementarStock}>+</button>
-                    </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col">
-                     <Link className="btn btn-primary" to={"../shop"}>Finalizar Compra</Link>
-                </div>
-            </div>
-            
-        </div>        
-    )
-}
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <div className="btn-group" role="group" aria-label="Basic example">
+            <button type="button" className="btn btn-light" onClick={decrementarCantidad}>
+              -
+            </button>
+            <button type="button" className="btn btn-light">
+              {cantidad}
+            </button>
+            <button type="button" className="btn btn-light" onClick={incrementarCantidad}>
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default ItemCount;

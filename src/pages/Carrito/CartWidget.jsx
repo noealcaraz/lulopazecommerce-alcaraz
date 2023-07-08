@@ -7,14 +7,13 @@ import CardMaceta from '../../components/Cards/CardMaceta';
 const CartWidget = () => {
   const { cart, isCartOpen, setIsCartOpen } = useContext(CartContext);
 
-
   const handleCartClick = () => {
-    setIsCartOpen(isCartOpen); // Cambia el estado de isCartOpen al hacer clic
+    setIsCartOpen(isCartOpen); // cambia el estado de isCartOpen al hacer clic
   };
   
   return (
     <div className="logo d-flex">
-      <Link to="/carrito"> {/* agrega el enlace al carrito */}
+      <Link to="/carrito"> 
         <img src={bagImage} alt="imagen" onClick={handleCartClick} /> 
         <div className="number-container">
           <div className="number">{cart.length}</div>

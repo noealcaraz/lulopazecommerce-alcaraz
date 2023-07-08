@@ -1,4 +1,6 @@
 import './App.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //React router dom
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -35,6 +37,7 @@ const App = () => {
             </Routes>
         </ShoppingCartContextProvider>
       </BrowserRouter>
+      <ToastContainer />
     </div>
   )
 }

@@ -2,10 +2,12 @@ import React, { useContext, useEffect } from 'react';
 import { CartContext } from '../../context/ShoppingCartContext';
 import './CartOverlay.css'
 import CartProduct from '../../components/Cards/CartProduct';
+import Botones from '../../components/Cards/Botones';
 
 
 const CartOverlay = () => {
   const { cart } = useContext(CartContext);
+  
   return (
     <div className="cart-overlay">
       <h2 className="cart-overlay-title">Carrito de compras</h2>  
@@ -21,7 +23,7 @@ const CartOverlay = () => {
           />
         ))
       )}
-      
+      <Botones/>
     </div>
     
   );
