@@ -5,14 +5,16 @@ import 'bootstrap/dist/js/bootstrap.js';
 import CartWidget from '../../pages/Carrito/CartWidget';
 import CartOverlay from '../../pages/Carrito/CartOverlay';
 import { CartContext } from '../../context/ShoppingCartContext';
+import lulopazlogo from '../../assets/lulopaz.png'
 
 function NavbarHeader() {
   const { isCartOpen } = useContext(CartContext);
+  
 
   return (
     <header style={{ position: 'sticky', top: 0, width: '100%', zIndex: 999, backgroundColor: 'white' }}>
       <a href="/" className='logito'>
-        <img src="/src/assets/lulopaz.png" alt="logo" />
+        <img src={lulopazlogo} alt="logo" />
       </a>
       <Nav className='barranavega'>
         <Nav.Item className='estilolink'>
